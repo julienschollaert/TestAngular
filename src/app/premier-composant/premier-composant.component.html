@@ -1,22 +1,22 @@
 <p>
 <div class="face-snap-card">
   <div style="text-align: center">
-    <h3>{{team}}</h3>
+    <h3>{{premierModel.team}}</h3>
     </div>
 
-  <img [src]="image" [alt]="team"><br>
-<b>Nom Equipe :</b> {{ team }} <br>
-<b>Moteur :</b> {{ engine }} <br>
-<b>Nombre Victoire :</b> {{ nbVictory }}
+  <img [src]="premierModel.image" [alt]="premierModel.team"><br>
+<b>Nom Equipe :</b> {{ premierModel.team }} <br>
+<b>Moteur :</b> {{ premierModel.engine }} <br>
+<b>Nombre Victoire :</b> {{ premierModel.nbVictory }}
 <br>
 
 <br>
 
-<b>Date du jour :</b> {{ dateJours }}
+<b>Date du jour :</b> {{ premierModel.dateJours }}
 
     <div style="text-align: center">
-    <button id="like" (click)="onButtonLike()">{{buttonLikeText}}({{comptLike}})</button>
-    <button id="dislike" style="margin-left: 5px" (click)="onButtonDisLike()">{{buttonDislikeText}}({{comptDislike}})</button>
+    <button id="like" (click)="onButtonLike()">{{buttonLikeText}}({{premierModel.comptLike}})</button>
+    <button id="dislike" style="margin-left: 5px" (click)="onButtonDisLike()">{{buttonDislikeText}}({{premierModel.comptDislike}})</button>
   </div>
 
 

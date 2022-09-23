@@ -1,4 +1,5 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
+import {PremierComposantModel} from "../models/premierModel";
 
 @Component({
   selector: 'app-premier-composant',
@@ -6,13 +7,16 @@ import { Component, OnInit} from '@angular/core';
   styleUrls: ['./premier-composant.component.scss']
 })
 export class PremierComposantComponent implements OnInit{
-  team!:string;
+
+  @Input() premierModel!: PremierComposantModel;
+
+  /*team!:string;
   engine!: string;
   nbVictory!: number;
   dateJours! : Date;
   image! : string;
   comptLike! : number;
-  comptDislike! : number;
+  comptDislike! : number;*/
   buttonLikeText! : string;
   buttonDislikeText! : string;
   btnDis! : HTMLInputElement;
@@ -20,13 +24,13 @@ export class PremierComposantComponent implements OnInit{
 
 
   ngOnInit() {
-    this.team = "Oracle Red Bull Racing";
+    /*this.team = "Oracle Red Bull Racing";
     this.engine = "Honda";
     this.nbVictory = 81;
     this.dateJours = new Date();
     this.image =  "https://upload.wikimedia.org/wikipedia/fr/3/36/Red_Bull_Racing_2022.png"
     this.comptLike = 0;
-    this.comptDislike = 0;
+    this.comptDislike = 0;*/
     this.buttonLikeText = "J'aime👍"
     this.buttonDislikeText = "Je n'aime pas👎";
     this.btnDis = <HTMLInputElement> document.getElementById('dislike');
@@ -34,6 +38,7 @@ export class PremierComposantComponent implements OnInit{
 
 
   }
+  /*
   onComteurLike() {
     this.comptLike++;
   }
@@ -41,19 +46,19 @@ export class PremierComposantComponent implements OnInit{
   onComteurDislike() {
     this.comptDislike++;
   }
-
+*/
   onButtonLike()
   {
     if(this.buttonLikeText === "J'aime👍")
     {
-      this.comptLike++;
+      this.premierModel.comptLike++;
       this.buttonLikeText = "J'aime déjà👍";
 
         this.btnDis.disabled = true;
     }
     else
     {
-      this.comptLike--;
+      this.premierModel.comptLike--;
       this.buttonLikeText = "J'aime👍"
       this.btnDis.disabled = false;
     }
@@ -63,13 +68,13 @@ export class PremierComposantComponent implements OnInit{
   {
     if(this.buttonDislikeText === "Je n'aime pas👎")
     {
-      this.comptDislike++;
+      this.premierModel.comptDislike++;
       this.buttonDislikeText = "Je n'aime pas du tout👎";
       this.btnLike.disabled = true;
     }
     else
     {
-      this.comptDislike--;
+      this.premierModel.comptDislike--;
       this.buttonDislikeText = "Je n'aime pas👎"
       this.btnLike.disabled = false;
     }
