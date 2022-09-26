@@ -1,24 +1,26 @@
-<p>
-<div class="face-snap-card">
-  <div style="text-align: center">
+
+<div class=" card face-snap-card">
+  <!--<div style="text-align: center">
     <h3>{{premierModel.team}}</h3>
+  </div>-->
+
+  <img [src]="premierModel.image"  class="card-img-top" [alt]="premierModel.team"><br>
+  <div class="card-body">
+  <b>Nom Equipe :</b> {{ premierModel.team }} <br>
+  <b>Moteur :</b> {{ premierModel.engine }} <br>
+  <b>Nombre Victoire :</b> {{ premierModel.nbVictory }}
+  <br>
+  <p *ngIf="premierModel.seasonPoint"><b>Nombre de point Saison 2022 :</b> {{premierModel.seasonPoint}}</p>
+
+  <br>
+
+<!--<b>Date du jour :</b> {{ premierModel.dateJours }}-->
+
+    <div class="button center">
+      <button style="margin-left: 60px" id="like" (click)="onButtonLike()">{{buttonLikeText}}({{premierModel.comptLike}})</button>
+      <button id="dislike" style="margin-left: 5px" (click)="onButtonDisLike()">{{buttonDislikeText}}({{premierModel.comptDislike}})</button>
     </div>
-
-  <img [src]="premierModel.image" [alt]="premierModel.team"><br>
-<b>Nom Equipe :</b> {{ premierModel.team }} <br>
-<b>Moteur :</b> {{ premierModel.engine }} <br>
-<b>Nombre Victoire :</b> {{ premierModel.nbVictory }}
-<br>
-
-<br>
-
-<b>Date du jour :</b> {{ premierModel.dateJours }}
-
-    <div style="text-align: center">
-    <button id="like" (click)="onButtonLike()">{{buttonLikeText}}({{premierModel.comptLike}})</button>
-    <button id="dislike" style="margin-left: 5px" (click)="onButtonDisLike()">{{buttonDislikeText}}({{premierModel.comptDislike}})</button>
-  </div>
-
+</div>
 
 </div>
 

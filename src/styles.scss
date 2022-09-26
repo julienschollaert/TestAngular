@@ -2,4 +2,32 @@
 
 * {
   font-family: Roboto, Helvetica, sans-serif;
+
+}
+
+.box {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-rows: 200px;
+  gap: 10px 2em;
+  //align-self: stretch;
+  justify-items: center;
+  justify-content: space-around;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.center-div {
+
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+}
+
+.block{
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
 }
