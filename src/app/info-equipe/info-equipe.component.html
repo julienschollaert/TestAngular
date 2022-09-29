@@ -1,0 +1,11 @@
+
+<div class="container" >
+  <!--<div class="block"><app-premier-composant [premierModel]="firstModel" ></app-premier-composant></div>
+  <div class="block"><app-premier-composant [premierModel]="secondModel" ></app-premier-composant></div>
+  <div class="block"><app-premier-composant [premierModel]="threeModel" ></app-premier-composant></div>-->
+
+
+  <div class="block">
+    <app-premier-composant *ngFor="let infoTeams of infoTeam" [premierModel]="infoTeams"></app-premier-composant>
+  </div>
+</div>

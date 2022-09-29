@@ -1,4 +1,5 @@
 export class PremierComposantModel {
+  id! : number;
   team! :string;
   engine! : string;
   nbVictory! : number;
@@ -9,7 +10,9 @@ export class PremierComposantModel {
   seasonPoint? : number;
 // ? = element optionnelle
 
-  constructor(team: string, engine: string, nbVictory: number, dateJours: Date, image: string, comptLike: number, comptDislike: number ,seasonPoint?: number) {
+
+  constructor(id: number, team: string, engine: string, nbVictory: number, dateJours: Date, image: string, comptLike: number, comptDislike: number, seasonPoint: number) {
+    this.id = id;
     this.team = team;
     this.engine = engine;
     this.nbVictory = nbVictory;
@@ -19,6 +22,4 @@ export class PremierComposantModel {
     this.comptDislike = comptDislike;
     this.seasonPoint = seasonPoint;
   }
-
-
 }
